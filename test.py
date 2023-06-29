@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 from keras.models import load_model
-def emotion(ret, frame):
+def emotion(cap ):
     model = load_model('model_file_30epochs.h5')
 
 
@@ -13,8 +13,8 @@ def emotion(ret, frame):
 
     loop_count = 0
 
-    while loop_count < 50:
-        
+    while loop_count < 20:
+        ret, frame = cap.read()
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
         faces = faceDetect.detectMultiScale(gray, 1.3, 3)
         

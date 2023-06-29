@@ -58,7 +58,7 @@ class App:
 
     def login(self):
 
-            test.emotion(ret, frame)
+            test.emotion(self.cap )
 
             
             name = util.recognize(self.most_recent_capture_arr, self.db_dir)
